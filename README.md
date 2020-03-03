@@ -3,7 +3,9 @@ Instructions for the Jr Java Developer Skills Test
 1) The test assumes you have the following technologies installed on your system with environment variables
    
    a) Maven - 3.5.2
+   
    b) Git
+   
    c) Java JRE
    
 2) Install the packages by running 'mvn install'
