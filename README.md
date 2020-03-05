@@ -8,6 +8,7 @@ Instructions for the Jr Java Developer Skills Test
 2) Install the packages by running 'mvn install'
 
 3) Run the project using './mvnw spring-boot:run
+    3a) username: admin / password: enter
 
 
 
