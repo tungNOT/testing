@@ -12,8 +12,8 @@ Instructions for the Jr Java Developer Skills Test
 
 3) Run 'mvn -N io.takari:maven:wrapper' from the root folder to install this plugin.
 
-3) Run the project using './mvnw spring-boot:run
-    3a) username: admin / password: enter
+4) Run the project using './mvnw spring-boot:run
+    4a) username: admin / password: enter
 
 
 
