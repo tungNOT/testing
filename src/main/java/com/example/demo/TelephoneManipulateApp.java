@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.*;
+import java.util.logging.Logger;
 
 @SpringBootApplication
 @RestController
@@ -40,12 +41,28 @@ public class TelephoneManipulateApp {
 	private Set<String> listOfTelephones = new HashSet<>();
 
 	private void scrambleTelephone(String telephone, String prefix){
-		/*
-		 *
-		 * YOUR CODE GOES HERE
-		 *
-		 */
+                // the base case is when we reach the end of telephone length the prefix will contains one combination
+                // check if combination is unique. This is done because of the hashset doesn't allow duplicate
+                if (telephone.length() == 0 ){
+                    // add the combination to the hashset if the combination is a duplicate it will not be added
+                    listOfTelephones.add(prefix);
+                }
+                else {
+                    // looping through all digits to recursively building the sequence combinations
+                    for (int i = 0; i < telephone.length(); i++){
+                        // recursively passing the string of new added telephone digits to the prefix and taking out the added digit out of the telephone
+                        // this will be recursively call until the prefix is full and it will backtrack to the previous digit and so on and so fort.
+                        scrambleTelephone( telephone.substring(0,i) + telephone.substring(i+1, telephone.length()), prefix + telephone.charAt(i));
+                    }
+                }
+                // The total combinations should be the size of hashset because there are not duplicate
+                totalManipulations = listOfTelephones.size();
+                
+                
 	}
+        
+       
+    private static final Logger LOG = Logger.getLogger(TelephoneManipulateApp.class.getName());
 
 	private ArrayList<String> getPageSet(){
 		int start = (this.pageNumber-1) * 100 ;
